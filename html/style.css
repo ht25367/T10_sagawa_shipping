@@ -1,0 +1,27 @@
+header{
+	background-color:white;
+	color:#3849a7;
+	padding:30px 5px 15px 30px;
+	font: 900 23px/15px "Noto Sans";
+	border-bottom:5px solid #4958ad;
+}
+
+.data_container{
+	background-color: #f8f8f5;
+	margin: 0 auto;
+}
+.button_container{
+	margin: 0 auto;
+	padding:25px;
+	border-top: 1px solid #888;
+
+}
+
+input {
+	height:41px;
+	color:white;
+	font-weight: 500;
+	background: linear-gradient(#4958ad,#2b3789);
+	border: 0px solid white;
+	border-radius: 4px;
+}
