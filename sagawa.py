@@ -3,6 +3,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 import pandas as pd
 import openpyxl
+import eel,read_xlsx
 
 
 # Chromeを起動する関数
@@ -27,11 +28,11 @@ def set_driver(driver_path, headless_flg):
 	return Chrome(ChromeDriverManager().install(), options=options)
 
 
-def main():
+def delivery_update(file_name):
 	toi_input_url = "https://k2k.sagawa-exp.co.jp/p/sagawa/web/okurijoinput.jsp"
 
-	# １、Excel読込。引数 index=0 で読むと1列目が indexになりキー取得不可に
-	delivery_pd = pd.read_excel("佐川フォーマット.xlsx",sheet_name=0)
+	# １、Excel読込。引数 index_col=0 で読むと1列目が indexになりキー取得不可に
+	delivery_pd = pd.read_excel(file_name, sheet_name=0)
 	# print(f"pd_tpye:{ type(delivery_pd)}, ")
 	# print(f"{delivery_pd.iat[2,1]}")
 
@@ -71,6 +72,7 @@ def main():
 	
 	print(f"i_cnt:{i_cnt},  input_i:{input_i}")
 	if i_cnt %10 != 0 :
+		# 10件に満たなかった件数分の伝票番号、問い合わせ
 		toiStart_elm.click()
 		time.sleep(2)
 
@@ -83,12 +85,13 @@ def main():
 
 
 	# ５、取得した結果をExcelに記述
-	delivery_pd.to_excel( "佐川フォーマット.xlsx" )
+	delivery_pd.to_excel( "佐川フォーマット.xlsx", index=False)
+	driver.quit()
+
+	# 6　テーブル更新
+	eel.clear_table(file_name )
+	read_xlsx.df_write_table("佐川フォーマット.xlsx")
 
 
-	# ６、eelで GUI(「ファイル選択」「実行ボタン」)を実装
-
-
-
-if __name__ == "__main__":
-	main()
+# if __name__ == "__main__":
+# 	main()

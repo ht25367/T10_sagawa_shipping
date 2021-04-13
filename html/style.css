@@ -13,12 +13,12 @@ header{
 .button_container{
 	margin: 0 auto;
 	padding:25px;
-	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
 
 }
 
 input {
-	height:41px;
+	height:32px;
 	color:white;
 	font-weight: 500;
 	background: linear-gradient(#4958ad,#2b3789);

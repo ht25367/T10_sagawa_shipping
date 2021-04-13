@@ -11,25 +11,125 @@
 <body>
 	<header>佐川急便　配送状況一括更新プログラム</header>
 	<div class="container">
-		<div class="data_container col-md-8 mt-4 mb-2">
+		<div class="button_container col-md-8 d-flex justify-content-between">
+			<input id="file_select" type="button" value="ファイルを開く"/>
+			<label id="file_name" for="file_select">ファイルを選択して下さい。</label>
+			<input id="result_update" type="button" value="　更　新　"/>
+		</div>
+
+		<div class="data_container col-md-10 mt-4 mb-2">
 			<table class="table table-striped table-sm">
 				<tr><th></th><th>パターン</th><th>送り状番号</th><th>結果</th></tr>
-				<tr><td>1</td><td class="pattern"></td><td class="no"></td><td class="result"></td></tr>
-				<tr><td>2</td><td class="pattern"></td><td class="no"></td><td class="result"></td></tr>
-				<tr><td>3</td><td class="pattern"></td><td class="no"></td><td class="result"></td></tr>
-				<tr><td>4</td><td class="pattern"></td><td class="no"></td><td class="result"></td></tr>
-				<tr><td>5</td><td class="pattern"></td><td class="no"></td><td class="result"></td></tr>
-				<tr><td>6</td><td class="pattern"></td><td class="no"></td><td class="result"></td></tr>
-				<tr><td>7</td><td class="pattern"></td><td class="no"></td><td class="result"></td></tr>
-				<tr><td>8</td><td class="pattern"></td><td class="no"></td><td class="result"></td></tr>
-				<tr><td>9</td><td class="pattern"></td><td class="no"></td><td class="result"></td></tr>
-				<tr><td>10</td><td class="pattern"></td><td class="no"></td><td class="result"></td></tr>
-    	</table>
+				<tr><td>1</td><td id="p01" class="pattern"></td><td id="n01" class="no"></td><td id="r01" class="result"></td></tr>
+				<tr><td>2</td><td id="p02" class="pattern"></td><td id="n02" class="no"></td><td id="r02" class="result"></td></tr>
+				<tr><td>3</td><td id="p03" class="pattern"></td><td id="n03" class="no"></td><td id="r03" class="result"></td></tr>
+				<tr><td>4</td><td id="p04" class="pattern"></td><td id="n04" class="no"></td><td id="r04" class="result"></td></tr>
+				<tr><td>5</td><td id="p05" class="pattern"></td><td id="n05" class="no"></td><td id="r05" class="result"></td></tr>
+				<tr><td>6</td><td id="p06" class="pattern"></td><td id="n06" class="no"></td><td id="r06" class="result"></td></tr>
+				<tr><td>7</td><td id="p07" class="pattern"></td><td id="n07" class="no"></td><td id="r07" class="result"></td></tr>
+				<tr><td>8</td><td id="p08" class="pattern"></td><td id="n08" class="no"></td><td id="r08" class="result"></td></tr>
+				<tr><td>9</td><td id="p09" class="pattern"></td><td id="n09" class="no"></td><td id="r09" class="result"></td></tr>
+				<tr ><td>10</td><td id="p10" class="pattern"></td><td id="n10" class="no"></td><td id="r10" class="result"></td></tr>
+				<tr style="display:none"><td>11</td><td id="p11" class="pattern"></td><td id="n11" class="no"></td><td id="r11" class="result"></td></tr>
+				<tr style="display:none"><td>12</td><td id="p12" class="pattern"></td><td id="n12" class="no"></td><td id="r12" class="result"></td></tr>
+				<tr style="display:none"><td>13</td><td id="p13" class="pattern"></td><td id="n13" class="no"></td><td id="r13" class="result"></td></tr>
+				<tr style="display:none"><td>14</td><td id="p14" class="pattern"></td><td id="n14" class="no"></td><td id="r14" class="result"></td></tr>
+				<tr style="display:none"><td>15</td><td id="p15" class="pattern"></td><td id="n15" class="no"></td><td id="r15" class="result"></td></tr>
+				<tr style="display:none"><td>16</td><td id="p16" class="pattern"></td><td id="n16" class="no"></td><td id="r16" class="result"></td></tr>
+				<tr style="display:none"><td>17</td><td id="p17" class="pattern"></td><td id="n17" class="no"></td><td id="r17" class="result"></td></tr>
+				<tr style="display:none"><td>18</td><td id="p18" class="pattern"></td><td id="n18" class="no"></td><td id="r18" class="result"></td></tr>
+				<tr style="display:none"><td>19</td><td id="p19" class="pattern"></td><td id="n19" class="no"></td><td id="r19" class="result"></td></tr>
+				<tr style="display:none"><td>20</td><td id="p20" class="pattern"></td><td id="n20" class="no"></td><td id="r20" class="result"></td></tr>
+				<tr style="display:none"><td>21</td><td id="p21" class="pattern"></td><td id="n21" class="no"></td><td id="r21" class="result"></td></tr>
+				<tr style="display:none"><td>22</td><td id="p22" class="pattern"></td><td id="n22" class="no"></td><td id="r22" class="result"></td></tr>
+				<tr style="display:none"><td>23</td><td id="p23" class="pattern"></td><td id="n23" class="no"></td><td id="r23" class="result"></td></tr>
+				<tr style="display:none"><td>24</td><td id="p24" class="pattern"></td><td id="n24" class="no"></td><td id="r24" class="result"></td></tr>
+				<tr style="display:none"><td>25</td><td id="p25" class="pattern"></td><td id="n25" class="no"></td><td id="r25" class="result"></td></tr>
+				<tr style="display:none"><td>26</td><td id="p26" class="pattern"></td><td id="n26" class="no"></td><td id="r26" class="result"></td></tr>
+				<tr style="display:none"><td>27</td><td id="p27" class="pattern"></td><td id="n27" class="no"></td><td id="r27" class="result"></td></tr>
+				<tr style="display:none"><td>28</td><td id="p28" class="pattern"></td><td id="n28" class="no"></td><td id="r28" class="result"></td></tr>
+				<tr style="display:none"><td>29</td><td id="p29" class="pattern"></td><td id="n29" class="no"></td><td id="r29" class="result"></td></tr>
+				<tr style="display:none"><td>30</td><td id="p30" class="pattern"></td><td id="n30" class="no"></td><td id="r30" class="result"></td></tr>
+				<tr style="display:none"><td>31</td><td id="p31" class="pattern"></td><td id="n31" class="no"></td><td id="r31" class="result"></td></tr>
+				<tr style="display:none"><td>32</td><td id="p32" class="pattern"></td><td id="n32" class="no"></td><td id="r32" class="result"></td></tr>
+				<tr style="display:none"><td>33</td><td id="p33" class="pattern"></td><td id="n33" class="no"></td><td id="r33" class="result"></td></tr>
+				<tr style="display:none"><td>34</td><td id="p34" class="pattern"></td><td id="n34" class="no"></td><td id="r34" class="result"></td></tr>
+				<tr style="display:none"><td>35</td><td id="p35" class="pattern"></td><td id="n35" class="no"></td><td id="r35" class="result"></td></tr>
+				<tr style="display:none"><td>36</td><td id="p36" class="pattern"></td><td id="n36" class="no"></td><td id="r36" class="result"></td></tr>
+				<tr style="display:none"><td>37</td><td id="p37" class="pattern"></td><td id="n37" class="no"></td><td id="r37" class="result"></td></tr>
+				<tr style="display:none"><td>38</td><td id="p38" class="pattern"></td><td id="n38" class="no"></td><td id="r38" class="result"></td></tr>
+				<tr style="display:none"><td>39</td><td id="p39" class="pattern"></td><td id="n39" class="no"></td><td id="r39" class="result"></td></tr>
+				<tr style="display:none"><td>40</td><td id="p40" class="pattern"></td><td id="n40" class="no"></td><td id="r40" class="result"></td></tr>
+				<tr style="display:none"><td>41</td><td id="p41" class="pattern"></td><td id="n41" class="no"></td><td id="r41" class="result"></td></tr>
+				<tr style="display:none"><td>42</td><td id="p42" class="pattern"></td><td id="n42" class="no"></td><td id="r42" class="result"></td></tr>
+				<tr style="display:none"><td>43</td><td id="p43" class="pattern"></td><td id="n43" class="no"></td><td id="r43" class="result"></td></tr>
+				<tr style="display:none"><td>44</td><td id="p44" class="pattern"></td><td id="n44" class="no"></td><td id="r44" class="result"></td></tr>
+				<tr style="display:none"><td>45</td><td id="p45" class="pattern"></td><td id="n45" class="no"></td><td id="r45" class="result"></td></tr>
+				<tr style="display:none"><td>46</td><td id="p46" class="pattern"></td><td id="n46" class="no"></td><td id="r46" class="result"></td></tr>
+				<tr style="display:none"><td>47</td><td id="p47" class="pattern"></td><td id="n47" class="no"></td><td id="r47" class="result"></td></tr>
+				<tr style="display:none"><td>48</td><td id="p48" class="pattern"></td><td id="n48" class="no"></td><td id="r48" class="result"></td></tr>
+				<tr style="display:none"><td>49</td><td id="p49" class="pattern"></td><td id="n49" class="no"></td><td id="r49" class="result"></td></tr>
+				<tr style="display:none"><td>50</td><td id="p50" class="pattern"></td><td id="n50" class="no"></td><td id="r50" class="result"></td></tr>
+			</table>
 		</div>
-		<div class="button_container col-md-8 d-flex justify-content-between">
-			<input class="" type="button" value="ファイルを開く"/>
-			<input class="" type="button" value="　更　新　"/>
+		
+		<script type="text/javascript" src="./eel.js"></script>
+		<script>
+			var select_flg = false;
+			var tr_row = document.getElementsByTagName("tr")
+			var td_pattern = document.getElementsByClassName("pattern")
+			var td_no = document.getElementsByClassName("no")
+			var td_result= document.getElementsByClassName("result")
 			
-	</div>
+			// 「ファイルを開く」ボタン
+			file_select.addEventListener("click", file_select_js,false);
+			function file_select_js() {
+				//alert("select_flg:" + select_flg );
+				eel.file_select_py(select_flg);
+			}
+			eel.expose(file_select_flg);
+			function file_select_flg(flg) {
+				select_flg = flg;
+			}
+
+			// 「更新」ボタン
+			result_update.addEventListener("click", delivery_update_js,false);
+			function delivery_update_js() {
+				if( /.xlsx/.test(file_name.innerHTML)){
+					// ファイル名" .xlsx "なら更新処理
+					eel.delivery_update( file_name.innerHTML)
+				}
+			}
+
+
+			// 表に書き込み
+			eel.expose(write_rowdata);
+			function write_rowdata(index, ptn, no, rst){
+				//class="pattern","no",result"
+				//<タグ style.display = "none" か "table-row"
+				tr_row[index].style.display = "table-row"
+				if(index>30){
+					//alert(index)
+				}
+				td_pattern[index].innerHTML = ptn
+				td_no[index].innerHTML = no
+				td_result[index].innerHTML = rst
+			}
+
+			// 表を初期化
+			eel.expose(clear_table);
+			function clear_table(excel_file){
+				for (let i = 49; i>=0; i-- ) {
+					td_pattern[i].innerHTML = ""
+					td_no[i].innerHTML = ""
+					td_result[i].innerHTML = ""
+					if (i > 10){
+						tr_row[i].style.display="none"
+					}
+				 }
+				 //alert(excel_file)
+				 file_name.innerHTML = excel_file
+			}
+		</script>
 </body>
 </html>
